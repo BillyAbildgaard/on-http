@@ -1281,6 +1281,7 @@ paths:
     get:
       x-swagger-serializer: nodes
       operationId: nodesGetAll
+      operationId: nodesGetAll
       summary: |
         List of all nodes or if there are none an empty object
       description: |
