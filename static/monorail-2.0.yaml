@@ -781,9 +781,9 @@ paths:
             $ref: '#/definitions/Error'
 
   /nodes/{identifier}/workflows/active:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
-      operationId: unimplemented
+      operationId: nodesGetActiveWorkflowById
       summary: |
         Fetch currently running workflows for specified node
       description: |
@@ -816,7 +816,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     delete:
-      operationId: unimplemented
+      operationId: nodesDelActiveWorkflowById
       summary: |
         Cancel currently running workflows for specified node
       description: |
@@ -849,9 +849,9 @@ paths:
           schema:
             $ref: '#/definitions/Error'
   /nodes/{identifier}/workflows:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
-      operationId: unimplemented
+      operationId: nodesGetWorkflowById
       summary: |
         Fetch all workflows for specified node
       description: |
@@ -884,7 +884,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     post:
-      operationId: unimplemented
+      operationId: nodesPostWorkflowById
       summary: |
         create workflow for specified node
       description: |
@@ -916,79 +916,12 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-  /nodes/{macaddress}/dhcp/whitelist:
-    x-swagger-router-controller: unimplemented
-    post:
-      operationId: unimplemented
-      summary: |
-        Add a whitelist of specified mac address
-      description: |
-        Add a whitelist of specified mac address
-      parameters:
-        - name: macaddress
-          in: path
-          description: |
-            Mac addresses and unique aliases to identify the node by, |
-            expect a string or an array of strings.
-          required: true
-          type: string
-      tags:
-        - nodes
-        - dhcp
-        - whitelist
-        - post
-      responses:
-        201:
-          description: |
-            the add was successful and it returns the whitelist
-          schema:
-            type: object
-        404:
-          description: |
-            The node with the identifier was not found
-          schema:
-            $ref: '#/definitions/Error'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-    delete:
-      operationId: unimplemented
-      summary: |
-        Remove a whitelist of specified mac address
-      description: |
-        Remove a whitelist of specified mac address
-      parameters:
-        - name: macaddress
-          in: path
-          description: |
-            Mac addresses and unique aliases to identify the node by, |
-            expect a string or an array of strings.
-          required: true
-          type: string
-      tags:
-        - nodes
-        - dhcp
-        - whitelist
-        - delete
-      responses:
-        204:
-          description: |
-            delete completed successfully
-        404:
-          description: |
-            The node with the identifier was not found
-          schema:
-            $ref: '#/definitions/Error'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
+
 
   /nodes/{identifier}/pollers:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
-      operationId: unimplemented
+      operationId: nodesGetPollersById
       summary: |
         Fetch all pollers for specified node
       description: |
@@ -1022,9 +955,9 @@ paths:
             $ref: '#/definitions/Error'
 
   /nodes/{identifier}/catalogs/{source}:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
-      operationId: unimplemented
+      operationId: nodesGetCatalogSourceById
       summary: |
         Fetch catalog of specified node for given source
       description: |
@@ -1065,9 +998,9 @@ paths:
             $ref: '#/definitions/Error'
 
   /nodes/{identifier}/catalogs:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
-      operationId: unimplemented
+      operationId: nodesGetCatalogById
       summary: |
         Fetch catalog of specified node
       description: |
@@ -1101,7 +1034,7 @@ paths:
             $ref: '#/definitions/Error'
 
   /nodes/{identifier}/obm/identify:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
       operationId: unimplemented
       summary: |
@@ -1136,7 +1069,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     post:
-      operationId: unimplemented
+      operationId: nodesPostObmIdById
       summary: |
         Enable or disable identify light on node through OBM (if supported)
       description: |
@@ -1174,9 +1107,9 @@ paths:
           schema:
             $ref: '#/definitions/Error'
   /nodes/{identifier}/obm:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
-      operationId: unimplemented
+      operationId: nodesGetObmById
       summary: |
         get the obm settings associated with a node.
       description: |
@@ -1208,7 +1141,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     post:
-      operationId: unimplemented
+      operationId: nodesPostObmById
       summary: |
         set the obm settings associated with a node.
       description: |
@@ -1245,9 +1178,9 @@ paths:
           schema:
             $ref: '#/definitions/Error'
   /nodes/{identifier}:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: nodes
     get:
-      operationId: unimplemented
+      operationId: nodesGetById
       summary: |
         List of all nodes or if there are none an empty object
       description: |
@@ -1279,7 +1212,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     delete:
-      operationId: unimplemented
+      operationId: nodesDelById
       summary: |
         Delete specified node.
       description: |
@@ -1307,7 +1240,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     patch:
-      operationId: unimplemented
+      operationId: nodesPatchById
       summary: |
         Patch specified node
       description: |
@@ -1347,7 +1280,7 @@ paths:
     x-swagger-router-controller: nodes
     get:
       x-swagger-serializer: nodes
-      operationId: nodesGet
+      operationId: nodesGetAll
       summary: |
         List of all nodes or if there are none an empty object
       description: |
@@ -1371,7 +1304,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
     post:
-      operationId: unimplemented
+      operationId: nodesPost
       summary: |
         post
       description: |
