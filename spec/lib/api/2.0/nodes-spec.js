@@ -85,7 +85,7 @@ describe('Http.Api.Nodes', function () {
         ]
     };
 
-    describe('GET /nodes', function () {
+    describe('2.0 GET /nodes', function () {
         it('should return a list of nodes', function () {
             waterline.nodes.find.resolves([node]);
 
