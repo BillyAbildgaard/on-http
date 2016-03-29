@@ -22,11 +22,11 @@ tags:
     description: RackHD 2.0 API
 paths:
   /versions:
-    x-swagger-router-controller: versions
+    x-swagger-router-controller: unimplemented 
     get:
       description: Returns installed versions to the caller
       # used as the method name of the controller
-      operationId: getVersions
+      operationId: unimplemented 
       tags: [ "/api/2.0" ]
       responses:
         "200":
