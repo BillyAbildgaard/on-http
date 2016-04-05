@@ -1,0 +1,12 @@
+{
+    "Catalogs": [],
+    "Id": "<%= identifier %>",
+    "Identifiers": [
+        "<%= mac_name %>"
+    ],
+    "Name": "<%= mac_name %>",
+    "Relations": [],
+    "Tags": [],
+    "type": "compute",
+    "Workflows": []
+}
