@@ -1,14 +1,15 @@
-<% for (var i = 0; i < body.length; i++) { %>
-    {
+{
+[<% for (var i = 0; i < body.length; i++) {%>
+    "Worflows": [],
     "Catalogs": [],
-    "Id": <%= body[i].id %>,
-    "Identifiers": [
-    <%= body[i].name %>
-    ],
-    "Name": <%= body[i].name %>,
+    "Name":<%= body[i].name%>,
+    "Identifiers": [ <%= body[i].name %> ],
+    "type": <%= body[i].type %>,
+    "autoDiscover": <%= body[i].autoDiscover %>,
     "Relations": [],
     "Tags": [],
-    "type": <%= body[i].type %>,
-    "Workflows": []
-    }
-} %>
+    "CreatedAt": <%= body[i].createdAt %>,
+    "updatedAt": <%= body[i].updatedAt %>,
+    "Id": <%= body[i].id %>
+   <% } %>]
+}
