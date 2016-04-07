@@ -1,15 +1,11 @@
 {
 [<% for (var i = 0; i < body.length; i++) {%>
-    "Worflows": [],
-    "Catalogs": [],
     "Name":<%= body[i].name%>,
     "Identifiers": [ <%= body[i].name %> ],
     "type": <%= body[i].type %>,
     "autoDiscover": <%= body[i].autoDiscover %>,
-    "Relations": [],
-    "Tags": [],
     "CreatedAt": <%= body[i].createdAt %>,
     "updatedAt": <%= body[i].updatedAt %>,
-    "Id": <%= body[i].id %>
-   <% } %>]
+    "Id": <%= body[i].id %> <% } %>
+]
 }

@@ -1637,6 +1637,7 @@ paths:
     x-swagger-router-controller: nodes
     get:
       x-swagger-serializer: nodes
+      x-view: nodes.id.2.0.json
       # swagger template and schema names (not sure how to get schema in fitting)...
       operationId: nodesGetById
       x-privileges: [ 'Read' ]

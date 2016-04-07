@@ -1,0 +1,15 @@
+{
+<% {%>
+    "Worflows": [],
+    "Catalogs": [],
+    "Name":<%= body.name%>,
+    "Identifiers": [ <%= body.name %> ],
+    "type": <%= body.type %>,
+    "autoDiscover": <%= body.autoDiscover %>,
+    "Relations": [],
+    "Tags": [],
+    "CreatedAt": <%= body.createdAt %>,
+    "updatedAt": <%= body.updatedAt %>,
+    "Id": <%= body.id %>
+<% } %>
+}
