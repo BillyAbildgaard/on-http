@@ -2114,9 +2114,9 @@ paths:
           schema:
             $ref: '#/definitions/Error'
   /files/{fileidentifier}:
-    x-swagger-router-controller: unimplemented
+    x-swagger-router-controller: files 
     get:
-      operationId: unimplemented
+      operationId: filesGetById 
       x-privileges: [ 'Read' ]
       x-authentication-type: [ 'jwt' ]
       summary: |
