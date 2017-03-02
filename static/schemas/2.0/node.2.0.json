@@ -7,7 +7,7 @@
             "properties": {
                 "autoDiscover": {
                     "description": "Enable automatic discovery",
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "name": {
                     "description": "Name of the node",
@@ -30,8 +30,8 @@
                     "type": "object"
                 },
                 "relations": {
-                        "description": "Node relations",
-                        "type": "array"
+                    "description": "Node relations",
+                    "type": "array"
                 },
                 "tags": {
                     "type": "array",
