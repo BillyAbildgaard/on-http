@@ -11,7 +11,7 @@ var consul = {
         service: {
             serviceList: serviceList,
             list: function () {
-                return new Promise(function (resolve, reject) {
+                return new Promise(function (resolve) {
                     resolve(serviceList);
                 });
             },
