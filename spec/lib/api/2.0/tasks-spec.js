@@ -67,8 +67,10 @@ describe('Http.Api.Tasks', function () {
 
     describe('GET /tasks/:id', function () {
         it("should send down tasks", function() {
-            taskProtocol.activeTaskExists.resolves(null);
-            sandbox.stub(taskGraphApiService, 'getTasksById').resolves({});
+            sandbox.stub(taskGraphApiService, 'getTasksById').resolves({
+                "identifier":"1234", 
+                "tasks": [ {"cmd": "testfoo"}
+            ]});
             return helper.request().get('/api/2.0/tasks/testnodeid')
             .expect(200)
             .expect(function (res) {
@@ -90,8 +92,7 @@ describe('Http.Api.Tasks', function () {
         });
 
         it("should error if an active task exists but no commands are sent", function() {
-            sandbox.stub(taskGraphApiService, 'getTasksById').resolves({});
-            taskProtocol.requestCommands.rejects(new Error(''));
+            sandbox.stub(taskGraphApiService, 'getTasksById').rejects(new Error(''));
             return helper.request().get('/api/2.0/tasks/testnodeid')
             .expect(404);
         });
