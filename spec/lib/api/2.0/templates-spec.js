@@ -1,5 +1,4 @@
-// Copyright 2015-2016, EMC, Inc.
-
+// Copyright © 2017 Dell Inc. or its subsidiaries. All Rights Reserved.
 'use strict';
 
 describe('Http.Api.Templates', function () {
