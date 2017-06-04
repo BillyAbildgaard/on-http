@@ -6,7 +6,7 @@ set -e
 set -x
 
 rm -rf node_modules
-npm install
-npm run apidoc
-npm run taskdoc
+yarn --ignore-engines
+yarn run apidoc
+yarn run taskdoc
 
